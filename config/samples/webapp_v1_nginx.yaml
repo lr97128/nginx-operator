@@ -1,0 +1,17 @@
+apiVersion: webapp.lr97128.com/v1
+kind: Nginx
+metadata:
+  labels:
+    app.kubernetes.io/name: nginx-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: nginx-sample
+spec:
+  replicas: 2
+  image: nginx:latest
+  containerPort: 80
+  servicePort: 80
+  enbaleService: true
+  enbaleIngress: true
+  baseurl: nginx.lr97128.com
+  path: /
+
